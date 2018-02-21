@@ -1,3 +1,77 @@
-<p>
-  add-job works!
-</p>
+
+	<div class="place_ad">
+		<a href="#" class="search-banner-wrap">
+			<img src="../../assets/images/search-ad.png" alt="Our Gambia Ads">
+		</a>
+
+		<div class="place_ad-headline">
+			<h2>Please add Job information</h2>
+		</div>
+
+		<div class="add_listing">
+			<form method="POST" action="#">
+				<input type="text" name="listing_company" placeholder="Company Name">
+				<input type="file" name="listing_photo">
+				<input type="text" name="listing_location" placeholder="Company Location">
+				<input type="text" name="listing_title" placeholder="Job Title e.g. Web Developer">
+				<input type="text" name="listing_date" placeholder="Date">
+				<select name="listing_min_qualification">
+					<option>Minimum Qualification</option>
+					<option name="junior-school">Junior School</option>
+					<option name="high-school">High School</option>
+					<option name="tertiary-education">Tertiary Education</option>
+					<option name="bachelors-degree">Bachelors Degree</option>
+					<option name="masters-degree">Masters Degree</option>
+					<option name="doctorate-degree">Doctors Degree</option>
+					<option name="phd">PHD</option>
+				</select>
+				<select name="listing_min_experience">
+					<option>Minimum Experience</option>
+					<option name="six-months">6 Months</option>
+					<option name="one-year">1 Year</option>
+					<option name="one-year-six-months">1 Year 6 Months</option>
+					<option name="two-years">2 Years</option>
+					<option name="two-years-six-months">2 Years 6 Months</option>
+					<option name="three-years">3 Year</option>
+				</select>
+				<select name="listing_length_of_appointment">
+					<option>Length of Appointment</option>
+					<option name="six-months">6 Months</option>
+					<option name="one-year">1 Year</option>
+					<option name="one-year-six-months">1 Year 6 Months</option>
+					<option name="two-years">2 Years</option>
+					<option name="two-years-six-months">2 Years 6 Months</option>
+					<option name="three-years">3 Year</option>
+					<option name="permanent">Permanent</option>
+				</select>
+				<select name="listing_probation_period">
+					<option>Probation Period</option>
+					<option name="six-months">6 Months</option>
+					<option name="one-year">1 Year</option>
+					<option name="one-year-six-months">1 Year 6 Months</option>
+					<option name="two-years">2 Years</option>
+					<option name="two-years-six-months">2 Years 6 Months</option>
+					<option name="three-years">3 Year</option>
+					<option name="permanent">None</option>
+				</select>
+				<textarea id="summernote" cols="10" rows="5" name="responsility" placeholder="Responsibility"></textarea>
+				<textarea id="summernote" cols="10" rows="5" name="introduction" placeholder="Introduction"></textarea>
+				<textarea id="summernote" cols="10" rows="5" name="purpose_of_job" placeholder="Purpose of the Job"></textarea>
+				<textarea id="summernote" cols="10" rows="5" name="key_responsibilities" placeholder="Key Responsibilities"></textarea>
+
+				<div class="add-option">
+					<a href="#" class="add--self-sell">
+						<div>Place the add for 2 Weeks</div>
+						<div>D2,000</div>
+					</a>
+					<a href="#" class="add--ourgambia-sell">
+						<div>Place the add for 4 Weeks</div>
+						<div>D3,500</div>
+					</a>
+				</div>
+
+				<a href="#" class="btn">Submit</a>
+			</form>
+		</div>
+	</div>
+
