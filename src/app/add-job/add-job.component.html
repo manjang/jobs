@@ -9,13 +9,40 @@
 		</div>
 
 		<div class="add_listing">
-			<form method="POST" action="#">
-				<input type="text" name="listing_company" placeholder="Company Name">
-				<input type="file" name="listing_photo">
-				<input type="text" name="listing_location" placeholder="Company Location">
-				<input type="text" name="listing_title" placeholder="Job Title e.g. Web Developer">
-				<input type="text" name="listing_date" placeholder="Date">
-				<select name="listing_min_qualification">
+			<form #form="ngForm">
+
+				<div class="form-group">
+					<input required minlength="3" maxlength="40" pattern="[a-zA-Z0-9]+" ngModel type="text" name="companyName" placeholder="Company Name" #companyName="ngModel" >
+					<div class="alert alert-danger" *ngIf="companyName.touched && !companyName.valid">
+						<div *ngIf="companyName.errors.required">Company Name is required.</div>
+						<div *ngIf="companyName.errors.minlength">Company Name should be more than 3 characters.</div>
+						<div *ngIf="companyName.errors.pattern">Please provide a valid Company Name.</div>
+					</div>
+				</div>
+
+				<input type="file" name="companyLogo" ngModel>
+
+				<div class="form-group">
+					<input required minlength="3" maxlength="40" pattern="[a-zA-Z0-9]+" ngModel type="text" name="companyLocation" placeholder="Company Location" #companyLocation="ngModel">
+					<div class="alert alert-danger" *ngIf="companyLocation.touched && !companyLocation.valid">
+						<div *ngIf="companyLocation.errors.required">Company Address is required.</div>
+						<div *ngIf="companyLocation.errors.minlength">Company Address should be more than 3 characters.</div>
+						<div *ngIf="companyLocation.errors.pattern">Please provide a valid Company Address.</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<input required minlength="3" maxlength="40" pattern="[a-zA-Z0-9]+" ngModel type="text" name="jobTitle" placeholder="Job Title e.g. Web Developer" #jobTitle="ngModel" >
+					<div class="alert alert-danger" *ngIf="jobTitle.touched && !jobTitle.valid">
+						<div *ngIf="jobTitle.errors.required">Job Title is required.</div>
+						<div *ngIf="jobTitle.errors.minlength">Job Title should be more than 3 characters.</div>
+						<div *ngIf="jobTitle.errors.pattern">Please provide a valid Job Title.</div>
+					</div>
+				</div>
+
+				<input type="text" name="listing_date" placeholder="Date" ngModel>
+
+				<select name="listing_min_qualification" ngModel>
 					<option>Minimum Qualification</option>
 					<option name="junior-school">Junior School</option>
 					<option name="high-school">High School</option>
@@ -25,7 +52,8 @@
 					<option name="doctorate-degree">Doctors Degree</option>
 					<option name="phd">PHD</option>
 				</select>
-				<select name="listing_min_experience">
+
+				<select name="listing_min_experience" ngModel>
 					<option>Minimum Experience</option>
 					<option name="six-months">6 Months</option>
 					<option name="one-year">1 Year</option>
@@ -34,7 +62,8 @@
 					<option name="two-years-six-months">2 Years 6 Months</option>
 					<option name="three-years">3 Year</option>
 				</select>
-				<select name="listing_length_of_appointment">
+
+				<select name="listing_length_of_appointment" ngModel>
 					<option>Length of Appointment</option>
 					<option name="six-months">6 Months</option>
 					<option name="one-year">1 Year</option>
@@ -44,7 +73,8 @@
 					<option name="three-years">3 Year</option>
 					<option name="permanent">Permanent</option>
 				</select>
-				<select name="listing_probation_period">
+
+				<select name="listing_probation_period" ngModel>
 					<option>Probation Period</option>
 					<option name="six-months">6 Months</option>
 					<option name="one-year">1 Year</option>
@@ -54,10 +84,11 @@
 					<option name="three-years">3 Year</option>
 					<option name="permanent">None</option>
 				</select>
-				<textarea id="summernote" cols="10" rows="5" name="responsility" placeholder="Responsibility"></textarea>
-				<textarea id="summernote" cols="10" rows="5" name="introduction" placeholder="Introduction"></textarea>
-				<textarea id="summernote" cols="10" rows="5" name="purpose_of_job" placeholder="Purpose of the Job"></textarea>
-				<textarea id="summernote" cols="10" rows="5" name="key_responsibilities" placeholder="Key Responsibilities"></textarea>
+				
+				<textarea id="summernote" cols="10" rows="5" name="responsility" placeholder="Responsibility" ngModel></textarea>
+				<textarea id="summernote" cols="10" rows="5" name="introduction" placeholder="Introduction" ngModel></textarea>
+				<textarea id="summernote" cols="10" rows="5" name="purpose_of_job" placeholder="Purpose of the Job" ngModel></textarea>
+				<textarea id="summernote" cols="10" rows="5" name="key_responsibilities" placeholder="Key Responsibilities" ngModel></textarea>
 
 				<div class="add-option">
 					<a href="#" class="add--self-sell">
@@ -70,7 +101,7 @@
 					</a>
 				</div>
 
-				<a href="#" class="btn">Submit</a>
+				<button class="btn" type="submit">Submit</button>
 			</form>
 		</div>
 	</div>

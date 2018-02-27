@@ -2,21 +2,21 @@
 	<h2 class="headline">OG Jobs: Login</h2>
 	<div class="jobs-login">
 		<div class="jobs-login--wrap">
-			<form action="add-job.html" method="POST" class="jobs-login--form">
+			<form #form="ngForm" class="jobs-login--form">
 				<div class="jobs-login--input">
 					<label>Email:</label>
-					<input type="text" name="login-name">	
+					<input type="text" name="login-name" ngModel>	
 				</div>
 				<div class="jobs-login--input">
 					<label>Password:</label>
-					<input type="password" name="login-password">	
+					<input type="password" name="login-password" ngModel>	
 				</div>
 
 				<button class="btn">Login</button>
 			</form>
 
-			<div class="jobs-login--link"><a routerLink="password-reset">Forgot Password?</a></div>
-			<div class="jobs-login--link"><a routerLink="sign-up">Sign Up</a></div>
+			<div class="jobs-login--link"><a routerLink="../password-reset">Forgot Password?</a></div>
+			<div class="jobs-login--link"><a routerLink="../sign-up">Sign Up</a></div>
 		</div>	
 	</div>
 
